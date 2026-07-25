@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import AuthHeader from "@/components/AuthHeader";
+import Footer from "@/components/Footer";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -71,6 +72,8 @@ export default function ForgotPasswordPage() {
           </Link>
         </p>
       </div>
+
+      <Footer />
     </div>
   );
 }

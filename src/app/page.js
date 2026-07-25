@@ -133,46 +133,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Hot meetings in your city
-</h2>
-            <p className="mt-3 text-slate-600">A few people who are active in your city right now.</p>
-          </div>
-
-          <div className="mt-10 grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {[
-              { name: "Ananya, 27", tag: "2 km away", color: "from-rose-400 to-pink-500" },
-              { name: "Karan, 30", tag: "5 km away", color: "from-violet-400 to-indigo-500" },
-              { name: "Priya, 25", tag: "1 km away", color: "from-amber-400 to-rose-500" },
-            ].map((card) => (
-              <div
-                key={card.name}
-                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-              >
-                <span
-                  className={`grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${card.color} text-white text-lg font-bold`}
-                >
-                  {card.name[0]}
-                </span>
-                <div>
-                  <p className="font-semibold text-slate-900">{card.name}</p>
-                  <p className="text-sm text-slate-500">{card.tag}</p>
-                </div>
-                <span className="ml-auto text-rose-500 text-xl">♥</span>
-              </div>
-            ))}
-          </div>
-
-          <dl className="mt-14 grid grid-cols-3 gap-6 max-w-md mx-auto text-center">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-2xl font-bold text-slate-900">{stat.value}</dt>
-                <dd className="text-xs text-slate-500 mt-1">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
-        </section> */}
 
         <section className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 pb-20 sm:pt-20">
           <div className="text-center max-w-2xl mx-auto">
@@ -219,46 +179,6 @@ export default function Home() {
                 </div>
               );
             })}
-          </div>
-        </section>
-
-        <section id="how-it-works" className="mx-auto max-w-6xl px-4 sm:px-6 py-20">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">How Amora works</h2>
-            <p className="mt-3 text-slate-600">Three simple steps between you and someone worth meeting.</p>
-          </div>
-
-          <div className="mt-12 grid sm:grid-cols-3 gap-8">
-            {steps.map((step, i) => (
-              <div key={step.title} className="relative">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-rose-50 text-2xl">
-                  {step.emoji}
-                </div>
-                <h3 className="mt-4 font-semibold text-slate-900">
-                  {i + 1}. {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="bg-slate-50 border-y border-slate-200">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900">Why people choose Amora</h2>
-              <p className="mt-3 text-slate-600">Built to feel safe, honest, and worth your time.</p>
-            </div>
-
-            <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((f) => (
-                <div key={f.title} className="rounded-2xl bg-white border border-slate-200 p-6">
-                  <span className="text-2xl">{f.emoji}</span>
-                  <h3 className="mt-3 font-semibold text-slate-900">{f.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{f.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

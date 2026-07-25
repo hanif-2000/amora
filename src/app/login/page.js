@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Zap, Eye, EyeOff } from "lucide-react";
 import AuthHeader from "@/components/AuthHeader";
+import Footer from "@/components/Footer";
 
 export default function LoginPage() {
   return (
@@ -110,6 +111,8 @@ function LoginForm() {
           </div>
         </form>
       </div>
+
+      <Footer />
     </div>
   );
 }

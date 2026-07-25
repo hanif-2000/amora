@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Zap, Eye, EyeOff, Check } from "lucide-react";
 import AuthHeader from "@/components/AuthHeader";
+import Footer from "@/components/Footer";
 
 const PASSWORD_RULES = [
   { key: "lower", label: "A lowercase letter", test: (v) => /[a-z]/.test(v) },
@@ -190,6 +191,8 @@ export default function SignupPage() {
           </Link>
         </p>
       </div>
+
+      <Footer />
     </div>
   );
 }
