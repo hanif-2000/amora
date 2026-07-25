@@ -120,7 +120,7 @@ export default function Home() {
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-violet-500/20 blur-3xl" />
           <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-rose-500/20 blur-3xl" />
 
-          <div className="relative mx-auto max-w-3xl px-4 sm:px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 text-center">
+          <div className="relative mx-auto max-w-3xl px-4 sm:px-6 pt-16 pb-10 sm:pt-20 sm:pb-12 text-center">
             <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
               Single? Taken? Curious?
               <br />
@@ -128,7 +128,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="relative mx-auto max-w-2xl px-4 sm:px-6 pb-20 sm:pb-24">
+          <div className="relative mx-auto max-w-2xl px-4 sm:px-6 pb-10 sm:pb-14">
             <HeroSearch />
           </div>
         </section>
@@ -174,7 +174,7 @@ export default function Home() {
           </dl>
         </section> */}
 
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 pb-20 sm:pt-20">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900">
               Hot meetings in your city
