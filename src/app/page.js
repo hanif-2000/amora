@@ -1,65 +1,307 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Smile, Flower2, Mars, Transgender, Martini } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HeroSearch from "@/components/HeroSearch";
+
+const CATEGORIES = [
+  {
+    name: "Call Girls",
+    icon: Smile,
+    color: "from-rose-500 to-pink-600",
+    desc: "Call girls and escort ads. Independent girls and escorts waiting to satisfy your sexual fantasies. Escort and women seeking men W4M. Enjoy their erotic services",
+    cities: ["Hyderabad", "Bangalore", "Delhi"],
+  },
+  {
+    name: "Massages",
+    icon: Flower2,
+    color: "from-violet-500 to-indigo-600",
+    desc: "Enjoy the best erotic massages ads. All sexual services. The hottest girls offer you a relaxing and hot massage. Full body massages",
+    cities: ["Hyderabad", "Bangalore", "Delhi"],
+  },
+  {
+    name: "Male Escorts",
+    icon: Mars,
+    color: "from-sky-500 to-blue-600",
+    desc: "Male escort services, gigolos, gay escorts and call boys. Models and male adult services. Dating with male escorts",
+    cities: ["Hyderabad", "Bangalore", "Delhi"],
+  },
+  {
+    name: "Transsexual",
+    icon: Transgender,
+    color: "from-amber-500 to-orange-600",
+    desc: "Transsexual dating. Discover the new sexual services with the sexiest transsexual in India. Shemale, ladyboy and TS escorts",
+    cities: ["Hyderabad", "Bangalore", "Delhi"],
+  },
+  {
+    name: "Adult Meetings",
+    icon: Martini,
+    color: "from-emerald-500 to-teal-600",
+    desc: "Casual dating, find your true love or NSA. Chat with local singles, girls or boys for a meeting. Meet with them and find a dating partner",
+    cities: ["Hyderabad", "Bangalore", "Delhi"],
+  },
+];
+
+const stats = [
+  { label: "Active members", value: "2.4M+" },
+  { label: "Cities worldwide", value: "180+" },
+  { label: "Average rating", value: "4.8 / 5" },
+];
+
+const steps = [
+  {
+    title: "Create your profile",
+    desc: "Add a few photos and tell people what you're actually looking for. Takes less than 3 minutes.",
+    emoji: "✨",
+  },
+  {
+    title: "Discover your matches",
+    desc: "Our matching gets smarter the more you use it, so the people you see actually fit what you want.",
+    emoji: "🔍",
+  },
+  {
+    title: "Start the conversation",
+    desc: "Matched? Say hi. No games, no pressure — just a real conversation with someone who's interested too.",
+    emoji: "💬",
+  },
+];
+
+const features = [
+  {
+    title: "Verified profiles",
+    desc: "Every profile goes through photo verification, so who you see is who you get.",
+    emoji: "✅",
+  },
+  {
+    title: "Smart matching",
+    desc: "We learn your preferences over time to keep surfacing people you'll actually click with.",
+    emoji: "🎯",
+  },
+  {
+    title: "Privacy first",
+    desc: "You control who sees your profile and your info is never sold or shared.",
+    emoji: "🔒",
+  },
+  {
+    title: "Built for real dating",
+    desc: "No bots, no spam accounts — just people looking for genuine connections nearby.",
+    emoji: "❤️",
+  },
+];
+
+const stories = [
+  {
+    name: "Ritika & Arjun",
+    quote:
+      "We matched on Amora three months ago and now we can't imagine not talking every day. It just felt easy from the start.",
+    initials: "RA",
+  },
+  {
+    name: "Sana",
+    quote:
+      "I liked that profiles are actually verified. It made the whole thing feel a lot less exhausting than other apps.",
+    initials: "S",
+  },
+  {
+    name: "Vikram & Meher",
+    quote:
+      "Met up for coffee within a week of matching. A year later we just moved in together. Wild how that worked out.",
+    initials: "VM",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      <Header />
+
+      <main className="flex-1">
+        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-violet-900 to-rose-900">
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-violet-500/20 blur-3xl" />
+          <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-rose-500/20 blur-3xl" />
+
+          <div className="relative mx-auto max-w-3xl px-4 sm:px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 text-center">
+            <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Single? Taken? Curious?
+              <br />
+              Amora is for everyone.
+            </h1>
+          </div>
+
+          <div className="relative mx-auto max-w-2xl px-4 sm:px-6 pb-20 sm:pb-24">
+            <HeroSearch />
+          </div>
+        </section>
+
+        {/* <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Hot meetings in your city
+</h2>
+            <p className="mt-3 text-slate-600">A few people who are active in your city right now.</p>
+          </div>
+
+          <div className="mt-10 grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {[
+              { name: "Ananya, 27", tag: "2 km away", color: "from-rose-400 to-pink-500" },
+              { name: "Karan, 30", tag: "5 km away", color: "from-violet-400 to-indigo-500" },
+              { name: "Priya, 25", tag: "1 km away", color: "from-amber-400 to-rose-500" },
+            ].map((card) => (
+              <div
+                key={card.name}
+                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+              >
+                <span
+                  className={`grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${card.color} text-white text-lg font-bold`}
+                >
+                  {card.name[0]}
+                </span>
+                <div>
+                  <p className="font-semibold text-slate-900">{card.name}</p>
+                  <p className="text-sm text-slate-500">{card.tag}</p>
+                </div>
+                <span className="ml-auto text-rose-500 text-xl">♥</span>
+              </div>
+            ))}
+          </div>
+
+          <dl className="mt-14 grid grid-cols-3 gap-6 max-w-md mx-auto text-center">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dt className="text-2xl font-bold text-slate-900">{stat.value}</dt>
+                <dd className="text-xs text-slate-500 mt-1">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </section> */}
+
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+              Hot meetings in your city
+            </h2>
+            <p className="mt-3 text-slate-600">Find your favourite Escort in Amora</p>
+          </div>
+
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CATEGORIES.map((cat) => {
+              const Icon = cat.icon;
+              return (
+                <div
+                  key={cat.name}
+                  className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+                >
+                  <div
+                    className={`relative h-44 bg-gradient-to-br ${cat.color} flex items-end p-5`}
+                  >
+                    <div className="flex items-center gap-2.5 text-white">
+                      <Icon className="h-6 w-6" strokeWidth={2.5} />
+                      <span className="text-xl font-bold">{cat.name}</span>
+                    </div>
+                  </div>
+
+                  <div className="p-5">
+                    <p className="text-base text-slate-600">{cat.desc}</p>
+
+                    <div className="mt-4 space-y-2.5">
+                      {cat.cities.map((city) => (
+                        <Link
+                          key={city}
+                          href="#"
+                          className="block rounded-lg border border-slate-200 px-4 py-3 text-base text-slate-500 hover:border-rose-300 transition-colors"
+                        >
+                          {cat.name}
+                          <br />
+                          <span className="font-bold text-rose-600">{city}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section id="how-it-works" className="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">How Amora works</h2>
+            <p className="mt-3 text-slate-600">Three simple steps between you and someone worth meeting.</p>
+          </div>
+
+          <div className="mt-12 grid sm:grid-cols-3 gap-8">
+            {steps.map((step, i) => (
+              <div key={step.title} className="relative">
+                <div className="grid h-12 w-12 place-items-center rounded-full bg-rose-50 text-2xl">
+                  {step.emoji}
+                </div>
+                <h3 className="mt-4 font-semibold text-slate-900">
+                  {i + 1}. {step.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-slate-50 border-y border-slate-200">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900">Why people choose Amora</h2>
+              <p className="mt-3 text-slate-600">Built to feel safe, honest, and worth your time.</p>
+            </div>
+
+            <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {features.map((f) => (
+                <div key={f.title} className="rounded-2xl bg-white border border-slate-200 p-6">
+                  <span className="text-2xl">{f.emoji}</span>
+                  <h3 className="mt-3 font-semibold text-slate-900">{f.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="stories" className="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Real stories from Amora</h2>
+            <p className="mt-3 text-slate-600">A few of the people who found their match here.</p>
+          </div>
+
+          <div className="mt-12 grid md:grid-cols-3 gap-6">
+            {stories.map((s) => (
+              <figure key={s.name} className="rounded-2xl border border-slate-200 p-6">
+                <blockquote className="text-slate-700 text-sm leading-relaxed">
+                  &ldquo;{s.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-rose-500 to-violet-600 text-white text-sm font-bold">
+                    {s.initials}
+                  </span>
+                  <span className="text-sm font-semibold text-slate-900">{s.name}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
+          <div className="rounded-3xl bg-gradient-to-r from-rose-500 to-violet-600 px-8 py-14 text-center sm:px-16">
+            <h2 className="text-3xl font-bold text-white">Ready to meet someone real?</h2>
+            <p className="mt-3 text-rose-50 max-w-lg mx-auto">
+              Join for free and start seeing people who are actually a good match for you.
+            </p>
+            <Link
+              href="/signup"
+              className="mt-8 inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-rose-600 shadow-sm hover:bg-rose-50 transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+              Create your free account
+            </Link>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }
