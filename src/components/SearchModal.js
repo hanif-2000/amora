@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   X,
   Search,
@@ -15,6 +16,8 @@ import {
 } from "lucide-react";
 
 const GENDER_OPTIONS = ["Call Girls", "Massages", "Male Escorts", "Transsexual", "Adult Meetings"];
+
+const slugify = (str) => str.toLowerCase().trim().replace(/\s+/g, "-");
 const CITY_OPTIONS = ["All the cities", "Jaipur", "Delhi", "Mumbai", "Bengaluru", "Hyderabad"];
 const NATIONALITY_OPTIONS = [
   { label: "Indian", emoji: "🇮🇳" },
@@ -45,6 +48,7 @@ const FILTER_ROWS = [
 ];
 
 export default function SearchFilterModal({ open, onClose, onSearch }) {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [city, setCity] = useState(CITY_OPTIONS[0]);
   const [region, setRegion] = useState("");
@@ -108,6 +112,9 @@ export default function SearchFilterModal({ open, onClose, onSearch }) {
       nationalities, hair, bodyType, attentionTo, placeOfService,
     });
     onClose?.();
+
+    // Demo: every category has its own route, but they all show the same sample listing for now.
+    router.push(`/${slugify(gender)}`);
   };
 
   return (
